@@ -2,10 +2,9 @@
 TODO LIST
 
 HEIGHT
-- Enter card data to the web and push transaction
 - Have calculation to check the rest of account finance
 - Have communication bot for technical cases
--
+- Проверка корректности транзакции
 
 
 

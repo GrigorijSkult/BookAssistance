@@ -1,7 +1,7 @@
-from typing import Any, List
-import requests
-from bs4 import BeautifulSoup, ResultSet
 import re
+import requests
+from bs4 import BeautifulSoup
+
 import gto
 
 
@@ -9,8 +9,7 @@ def get_book_info(url):
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
 
-  #  test_url = soup.find_all(string=re.compile("Author.Today"))
-    if soup.find_all(string=re.compile("Author.Today")) != []:
+    if soup.find_all(string=re.compile("Author.Today")):
         quotes = soup.find_all(string=re.compile("Оплата заказа №"))  # or for example window.__data #orderId
 
         paragraphs: list[str] = []
