@@ -7,9 +7,9 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 
 
-def perform_payment(url):
+def perform_payment(url, order_price_rub):
 
-    driver = webdriver.Firefox(executable_path=r'Library/geckodriver.exe')  # https://github.com/mozilla/geckodriver/releases
+    driver = webdriver.Firefox(executable_path=r'../Library/geckodriver.exe')  # https://github.com/mozilla/geckodriver/releases
     driver.get(url)
 
     # Enter the card values
@@ -43,6 +43,14 @@ def perform_payment(url):
         payment_result += error_message
     except NoSuchElementException:
         payment_result = "Нет технической ошибки платежа"
+
+        # Change remaining account amount
+        reader = open('AdditionaFiles/remainingAmount.txt', 'r')
+        remaining_amount = float(reader.read())
+        reader.close()
+        reader = open('AdditionaFiles/remainingAmount.txt', 'w')
+        reader.write(str(remaining_amount - order_price_rub))
+        reader.close()
 
         #
         # TO BE CONTINUE

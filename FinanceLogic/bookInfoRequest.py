@@ -2,7 +2,7 @@ import re
 import requests
 from bs4 import BeautifulSoup
 
-import gto
+from FinanceLogic import gto
 
 
 def get_book_info(url):
@@ -41,7 +41,7 @@ def get_book_info(url):
                 i += 1
                 order_price += x
 
-        return gto.BookInfo(order_number, order_price, order_currency)
+        return gto.BookInfo(int(order_number), float(order_price), order_currency)
 
     else:
-        raise gto.ErrorsInfo("Некорректная ссылка")
+        raise gto.ErrorsInfo("Недействительная ссылка")
