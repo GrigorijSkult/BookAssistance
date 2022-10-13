@@ -9,7 +9,9 @@ from selenium.common.exceptions import NoSuchElementException
 
 def perform_payment(url, order_price_rub):
 
-    driver = webdriver.Firefox(executable_path=r'../Library/geckodriver.exe')  # https://github.com/mozilla/geckodriver/releases
+    # ЮMoney check # TO DO
+
+    driver = webdriver.Firefox(executable_path=r'../../Library/geckodriver.exe')  # https://github.com/mozilla/geckodriver/releases
     driver.get(url)
 
     # Enter the card values

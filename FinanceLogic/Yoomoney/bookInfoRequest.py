@@ -10,6 +10,7 @@ def get_book_info(url):
     soup = BeautifulSoup(response.text, 'html.parser')
 
     if soup.find_all(string=re.compile("Author.Today")):
+        # ЮMoney check # TO DO
         quotes = soup.find_all(string=re.compile("Оплата заказа №"))  # or for example window.__data #orderId
 
         paragraphs: list[str] = []
