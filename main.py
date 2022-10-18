@@ -4,7 +4,7 @@ from FinanceLogic import gto, priceCount, criptoPaymentCheck
 import time
 
 # only Yoomoney
-urlTest = "https://yoomoney.ru/checkout/payments/v2/contract/bankcard?orderId=2ad393bb-000f-5000-9000-18e1c77be76f"
+urlTest = "https://yoomoney.ru/checkout/payments/v2/contract/bankcard?orderId=2adf9622-000f-5000-9000-138117564231"
 
 # Variables
 operation_max_time = 2400  # 40 min in sek
@@ -27,7 +27,7 @@ try:
         # Выбор сетей в usdt
         # print(criptoCoinLogic.coin_list[0])
 
-        criptoPaymentCheck.check_transaction()
+        # criptoPaymentCheck.check_transaction("abbd87fa2040adcba217a134bf10a3b44937ad0da125cfce7566b7d147038ef0", scan_result.order_price, "usdt")
 
         # ...  TO DO ...
 

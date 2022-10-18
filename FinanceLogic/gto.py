@@ -13,9 +13,10 @@ class PriceInfo:
         self.usdt_price = usdt_price
 
 class CryptCoinInfo:
-    def __init__(self, coin, network, my_wallet_address, txid=None):
+    def __init__(self, coin, network, network_fee, my_wallet_address, txid=None):
         self.coin = coin
         self.network = network
+        self.network_fee = network_fee
         self.my_wallet_address = my_wallet_address
         self.txid = txid
 
